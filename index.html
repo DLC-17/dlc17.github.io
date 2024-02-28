@@ -13,17 +13,19 @@
     </div>
     <div class="button-container">
         <button class="button" onclick="nextPage()">Yes!</button>
-        <button class="button"   onclick="moveButton()">No</button>
+        <button class="button" id="noButton" onclick="reload()">No</button>
     </div>
     <body style="background-color:#d45943">
         <script>
             function nextPage() {
                 window.location.href = "valentine_yes.html";
             }
-            
+            function reload() {
+                location.reload();
+            }
             function moveButton() {
-                var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                var x = Math.floor(Math.random() * window.innerWidth);
+                var y = Math.floor(Math.random() * window.innerHeight);
                 document.getElementById('noButton').style.left = `${x}px`;
                 document.getElementById('noButton').style.top = `${y}px`;
             }
